@@ -27,6 +27,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public DatabaseHandler(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
+    ArrayList<City> arrayList = new ArrayList<>();
+
+
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -65,6 +69,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_NAME, city.getNameCity());
 
         db.insert(TABLE_NAME, null, values);
+        db.close();
+    }
+    public void updateCity(City city) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_NAME, city.getNameCity());
+
+
+        db.update(TABLE_NAME, values, KEY_ID + " = ?", new String[] { String.valueOf(city.getId()) });
+        db.close();
+    }
+    public void deleteStudent(int cityId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME, KEY_ID + " = ?", new String[] { String.valueOf(cityId)});
         db.close();
     }
 }
