@@ -7,53 +7,58 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/textCity"
-        android:layout_width="357dp"
-        android:layout_height="63dp"
+        android:id="@+id/edtinput"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+
         android:drawableLeft="@drawable/vector"
-        android:gravity="center|left"
-        android:padding="10dp"
-        android:text="TextView"
+        android:drawablePadding="30px"
+        android:ems="10"
+        android:hint="The place that you will visit\n in the future"
+        android:inputType="textPersonName"
+        android:paddingLeft="30px"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnSave"
-        android:layout_width="151dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="28dp"
-        android:text="SAVE"
-        app:layout_constraintStart_toStartOf="@+id/textCity"
-        app:layout_constraintTop_toBottomOf="@+id/textCity" />
+        android:id="@+id/btnadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+        android:text="save"
+        app:backgroundTint="#C94820"
+        app:layout_constraintStart_toStartOf="@+id/edtinput"
+        app:layout_constraintTop_toBottomOf="@+id/edtinput" />
 
     <Button
-        android:id="@+id/btnCancel"
-        android:layout_width="112dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:text="CANCEL"
-        app:layout_constraintBottom_toBottomOf="@+id/btnSave"
-        app:layout_constraintEnd_toEndOf="@+id/textCity"
-        app:layout_constraintHorizontal_bias="0.071"
-        app:layout_constraintStart_toEndOf="@+id/btnSave"
-        app:layout_constraintTop_toTopOf="@+id/btnSave"
-        app:layout_constraintVertical_bias="1.0" />
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="cancel"
+        app:backgroundTint="#7CC94820"
+        app:layout_constraintBottom_toBottomOf="@+id/btnadd"
+        app:layout_constraintEnd_toEndOf="@+id/edtinput"
+        app:layout_constraintTop_toTopOf="@+id/btnadd" />
 
     <ListView
-        android:id="@+id/listView"
-        android:layout_width="409dp"
-        android:layout_height="547dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSave"
-        app:layout_constraintVertical_bias="1.0" />
-
-
+        android:listSelector="#00FF00"
+        android:id="@+id/listview"
+        android:layout_width="0dp"
+        android:layout_height="482dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/btnadd"
+        app:layout_constraintTop_toBottomOf="@+id/btnadd" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
